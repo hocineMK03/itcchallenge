@@ -24,8 +24,10 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    lastLogin: {
-        type: Date
+    isadmin:{
+        type:Boolean,
+        default:false
+    
     },
     dateCreated: {
         type: Date,

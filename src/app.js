@@ -4,6 +4,7 @@ const cors = require('cors');
 const app=express()
 
 const authroutes=require('./routes/authRoutes')
+const trainingroutes=require('./routes/trainingRoutes')
 const corsOptions = {
     origin: 'http://127.0.0.1:3000', // Replace with your allowed origin
     methods: 'GET,POST,DELETE',
@@ -13,7 +14,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(bodyparser.json())
 app.use('/api/auth',authroutes)
-
+app.use('/api/training',trainingroutes)
 
 //error handling middleware
 app.use((error,req,res,next)=>{
