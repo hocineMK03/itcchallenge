@@ -1,0 +1,29 @@
+.aboutus-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #FFC300;
+    margin: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f8f9fa; /* Light gray background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+  }
+  
+  .aboutus-main h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .aboutus-main p {
+    font-size: 1.5rem;
+    line-height: 1.5; /* Improved readability with increased line height */
+  }
+  
+  @media (max-width: 768px) {
+    .aboutus-main {
+      width: 90%;
+    }
+  }
+  

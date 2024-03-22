@@ -1,0 +1,41 @@
+
+.footer {
+    background-color: rgba(128, 128, 128, 0.5); /* Grey color with 50% opacity */
+    color: var(--text-color);
+    text-align: center;
+    
+    z-index: 2;
+  
+}
+
+.footer-content{
+  display: flex;
+  gap: 20px;
+justify-content: space-around;
+align-items: center;
+background: transparent;
+}
+.footer p {
+    margin: 0;
+    background: transparent;
+    font-size: 1.5rem;
+}
+
+.contact {
+  padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    
+}
+
+.contact h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    background: transparent;
+
+}

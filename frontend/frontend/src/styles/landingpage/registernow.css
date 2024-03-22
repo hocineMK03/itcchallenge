@@ -1,0 +1,77 @@
+.registernow{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin: 25px;
+  }
+  .lastimage{
+    background-image: url('../../assets/pexels-bruno-bueno-3861718.jpg'); /* Set the background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 350px;
+    width: 350px;
+    border-radius: 10px;
+    position: relative;
+  }
+  .lasttext{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+    padding: 22px;
+  }
+  
+  .lasttext h1{
+    font-size: 2rem;
+    margin-bottom: 20px;
+    background-color: transparent;
+    color: var(--text-color);
+    overflow-y: auto;
+  }
+  .lasttext button {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    min-width: 20%;
+    font-size: 1.4rem;
+    transition: background-color 0.3s ease;
+        color: var(--background-color);
+  border: none;
+  cursor: pointer;
+  overflow-y: hidden;
+  }
+  
+  .lasttext button:hover {
+    background-color: #c043ed;
+    transform: scale(1.1);
+  }
+
+
+  @media(max-width: 768px) {
+    .registernow{
+        overflow-y: hidden;
+
+    }
+    .lastimage {
+      display: none;
+      }
+    .lasttext{
+        z-index: 15;
+        background-color: transparent;
+    }
+    .lasttext h1{
+        background-color: transparent;
+        font-size: 1.4rem;
+    }
+    .lasttext button{
+        font-size: 1.1rem;
+    }
+  }  

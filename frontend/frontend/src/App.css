@@ -1,0 +1,18 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+        --primary-color: #FFC300; 
+    --accent-color: #CE47FF;
+    --text-color: #050315; 
+    --background-color: #F3F8FD;
+    background-color: var(--background-color);
+   overflow-x: hidden;
+   
+}
+body{
+    height: 100vh;
+}
+

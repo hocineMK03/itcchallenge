@@ -1,0 +1,80 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url('../../assets/herosection.jpg'); /* Set the background image */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content {
+  border-radius: 10px;
+  position: relative;
+  z-index: 2; /* Ensure it's above the pseudo-element */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(30px) brightness(1); /* Apply blur effect and adjust brightness */
+  background-color: transparent;
+  padding: 20px; /* Add padding to improve text readability */
+  color: var(--text-color);
+  gap: 20px;
+  width: 50%;
+  height: 250px;
+  border-radius: 10px;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  background-color: transparent;
+  overflow-y: hidden;
+  color: var(--background-color);
+  display: inline-block; /* Ensure inline-block display to handle span elements */
+}
+
+.hero-content h1 span {
+  opacity: 0;
+  animation: reveal 0.5s forwards;
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content p {
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  background-color: transparent;
+  color: var(--background-color);
+  overflow-y: hidden;
+}
+
+.hero-content .btn {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  min-width: 20%;
+  font-size: 1.4rem;
+  transition: background-color 0.3s ease;
+  overflow-y: hidden;
+  min-height: 45px;
+}
+
+.hero-content .btn:hover {
+  background-color: #b540df;
+}
