@@ -4,14 +4,14 @@ const jwtauth=require('../middleware/jwtAuth')
 class AuthControllers{
 
     async handleLoginRequest(req,res,next){
-        const {name,email,password}=req.body
+        const {email,password}=req.body
         if(password!=undefined){
             try{
-                const result=await services.handleLogin(name,email,password)
+                const result=await services.handleLogin(email,password)
             if(result){
 
-                const accessToken=jwtauth.createAccessToken(name);
-            const refreshToken=jwtauth.createRefreshToken(name);
+                const accessToken=jwtauth.createAccessToken(email);
+            const refreshToken=jwtauth.createRefreshToken(email);
             res.cookie('access_token', accessToken, { httpOnly: true ,maxAge:4*60*1000 });
   res.cookie('refresh_token', refreshToken, { httpOnly: true, maxAge:24*60*60*1000});
             console.log(accessToken,refreshToken)
@@ -37,15 +37,15 @@ class AuthControllers{
     }
 
     async handleRegisterRequest(req,res,next){
-        const{name,username,email,password}=req.body
+        const{username,email,password}=req.body
 
-        if(name!=undefined&&email!=undefined&&password!=undefined){
+        if(email!=undefined&&password!=undefined){
            
             try{
-                const result=await services.handleRegister(name,username,email,password)
+                const result=await services.handleRegister(username,email,password)
                 if(result){
-                    const accessToken=jwtauth.createAccessToken(name);
-                    const refreshToken=jwtauth.createRefreshToken(name);
+                    const accessToken=jwtauth.createAccessToken(email);
+                    const refreshToken=jwtauth.createRefreshToken(email);
                     res.cookie('access_token', accessToken, { httpOnly: true ,maxAge:4*60*1000 });
           res.cookie('refresh_token', refreshToken, { httpOnly: true, maxAge:24*60*60*1000});
                     console.log(accessToken,refreshToken)

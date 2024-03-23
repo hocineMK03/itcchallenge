@@ -4,9 +4,9 @@ const trainingProgram= require('../models/TrainingProgram');
 const User=require('../models/User');
 const trainingprogramuser=require('../models/TrainingProgramUser');
 class HandleTrainingServices {
-    async handleCreateTraining(name, title, description, instructors, duration, schedule, prerequisite, fees, format, category) {
+    async handleCreateTraining(email, title, description, instructors, duration, schedule, prerequisite, fees, format, category) {
         try {
-            const user = await User.findOne({ name: name }).exec();
+            const user = await User.findOne({ email: email }).exec();
             if(user.isadmin==false){
 
 throw Object.assign(new Error('User not an admin'), { status: 401 })
@@ -37,11 +37,11 @@ throw Object.assign(new Error('User not an admin'), { status: 401 })
         }
     }
     
-    async handleJointraining(trainingId, name) {
+    async handleJointraining(trainingId, email) {
         try{
 
             
-            const userID=await User.findOne({name:name}).exec();
+            const userID=await User.findOne({email:email}).exec();
             const checkifjoined=await trainingprogramuser.findOne({trainingprogramid:trainingId,userid:userID._id}).exec();
 
             if(checkifjoined){
@@ -72,9 +72,9 @@ throw Object.assign(new Error('User not an admin'), { status: 401 })
 
     }
 
-    async handleStopTraining(trainingId, name) {
+    async handleStopTraining(trainingId, email) {
         try{
-            const userID=await User.findOne({name:name}).exec();
+            const userID=await User.findOne({email:email}).exec();
             const checkifjoined=await trainingprogramuser.findOne({trainingprogramid:trainingId,userid:userID._id}).exec();
 
             if(!checkifjoined){
@@ -102,7 +102,9 @@ throw Object.assign(new Error('User not an admin'), { status: 401 })
 
     try{
         const trainings=await trainingProgram.find().exec();
+        console.log(trainings)
     if(trainings){
+
         return trainings
     }
     throw Object.assign(new Error('No training programs found'), { status: 404 })

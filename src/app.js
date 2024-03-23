@@ -6,7 +6,7 @@ const app=express()
 const authroutes=require('./routes/authRoutes')
 const trainingroutes=require('./routes/trainingRoutes')
 const corsOptions = {
-    origin: 'http://127.0.0.1:3000', // Replace with your allowed origin
+    origin: ['http://127.0.0.1:3000','http://127.0.0.1:3000'], // Replace with your allowed origin
     methods: 'GET,POST,DELETE',
     credentials: true,
     exposedHeaders: 'Set-Cookie',

@@ -2,10 +2,9 @@
 const express = require('express');
 const router = express.Router();
 const trainingControllers = require('../controllers/trainingControllers');
-const jwtverify = require('../middleware/jwtverify');
+const jwtverify = require('../middleware/jwtVerify');
 router.get('/displaytrainings', trainingControllers.handleDisplayTrainingRequest)
-router.use(jwtverify)
-router.post('/join', trainingControllers.handleJoinTrainingrequest)
-router.post('/stoptraining', trainingControllers.handleStopTrainingRequest)
-router.post('/create', trainingControllers.handleCreateTrainingRequest)
+router.post('/join',jwtverify,trainingControllers.handleJoinTrainingrequest)
+router.post('/stoptraining',jwtverify, trainingControllers.handleStopTrainingRequest)
+router.post('/create',jwtverify, trainingControllers.handleCreateTrainingRequest)
 module.exports = router;

@@ -40,7 +40,8 @@ next(err)
 
     async handleDisplayTrainingRequest(req,res,next){
             const { category } = req.query;
-        if(category){
+        if(category !=undefined){
+
             const result=await services.handleDisplayTrainingsByCategory(category);
             if(result){
                 return res.status(200).json(result)
@@ -51,10 +52,13 @@ next(err)
             next(err)
         }
         else{
+            console.log("hree")
 
             const result=await services.handleDisplayTrainings();
             if(result){
-                res.status(200).json(result)
+                console.log("hree")
+
+               return res.status(200).json(result)
             }
             const err=new Error('No training programs found')
               err.statusCode=404
