@@ -1,41 +1,146 @@
+
+.sidebar-nav {
+  position: absolute;
+  left: 0;
+  top: 25%; /* Adjust the top position as needed */
+  height: 100%; /* Make the sidebar take the full height of its container */
+  overflow-y: auto; /* Add vertical scrollbar if content exceeds height */
+  width: 200px; /* Set a fixed width for the sidebar */
+  padding: 20px; /* Add padding for better appearance */
+  background-color: #f0f0f0; /* Background color of the sidebar */
+  
+}
+
+.sidebar-nav ul{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  background-color: #f0f0f0;
+padding: 20px;
+}
+ul li{
+  list-style: none;
+  background-color: transparent;
+  padding: 20px 0;
+  font-size: 0.5rem;
+}
+ul li a{
+  list-style: none;
+  background-color: transparent;
+  padding: 20px 10px;
+  font-size: 0.9rem;
+}
+
 .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    gap: 20px;
-    justify-content: center;
-  }
+background-color: var(--background-color);
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
   
-  .card {
-    position: relative;
-    width: 100%;
-    transition: transform 0.3s ease-in-out;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
-  
+}
+
+@media (min-width: 36rem) { 
+  .grid-container {
+      grid-template-columns: repeat(3, minmax(18rem, 1fr));
   }
-  
-  .card:hover {
-    transform: translateY(-5px) rotateX(2deg) rotatez(2deg);
-    box-shadow: 0 8px 16px var(--primary-color); 
-  }
-  .card-btn{
-    display: flex;
-    gap: 25px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
+}
+
+.card:hover {
+  transform: translateY(-5px) rotateX(2deg) rotatez(2deg);
+  box-shadow: 0 8px 16px var(--primary-color); 
+}
+
+.card-btn {
+  display: flex;
+  gap: 25px;
+}
+
+.card-btn button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  background-color: var(--accent-color);
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.card-btn button:hover {
+  transform: scale(1.1);
+  background-color: #b641e0;
+}
+@media screen and (max-width: 1200px) {
+  .grid-container {
+    grid-template-columns: repeat(2, minmax(18rem, 1fr));
   }
  
-  .card-btn button {
-    padding: 8px 16px;
-    font-size: 1rem;
-    background-color: var(--accent-color);
-    color: white;
-    outline: none;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+ 
+}
+/* Media query for smaller screens */
+@media screen and (max-width: 850px) {
+  .grid-container {
+    grid-template-columns: repeat(1, minmax(18rem, 1fr));
   }
-  
-  .card-btn button:hover {
-    transform: scale(1.1);
-    background-color: #b641e0;
+  .sidebar-nav{
+    position: static;
+    width: 100%; /* Make the sidebar take the full width */
+    top: 0; /* Position it at the top */
+    left: 0; /* Align it to the left */
+    padding: 20px; /* Add padding for better appearance */
+    height: auto; /* Allow the height to adjust according to content */
+    overflow-y: auto; /* Add vertical scrollbar if content exceeds height */
   }
-  
+  .sidebar-nav ul{
+    display: flex;
+    flex-direction: column; /* Change direction to row */
+    gap: 20px; /* Reduce the gap between items */
+    background-color: #f0f0f0;
+    padding: 10px 0; /* Adjust padding */
+  }
+  .sidebar-nav ul li {
+    padding: 10px; /* Adjust padding */
+    font-size: 0.9rem; /* Reset font size */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .grid-container {
+    grid-template-columns: repeat(1, minmax(18rem, 1fr));
+  }
+  .sidebar-nav{
+    position: static;
+    width: 100%; /* Make the sidebar take the full width */
+    top: 0; /* Position it at the top */
+    left: 0; /* Align it to the left */
+    padding: 20px; /* Add padding for better appearance */
+    height: auto; /* Allow the height to adjust according to content */
+    overflow-y: auto; /* Add vertical scrollbar if content exceeds height */
+  }
+  .sidebar-nav ul{
+    display: flex;
+    flex-direction: column; /* Change direction to row */
+    gap: 20px; /* Reduce the gap between items */
+    background-color: #f0f0f0;
+    padding: 10px 0; /* Adjust padding */
+  }
+  .sidebar-nav ul li {
+    padding: 10px; /* Adjust padding */
+    font-size: 0.9rem; /* Reset font size */
+  }
+}

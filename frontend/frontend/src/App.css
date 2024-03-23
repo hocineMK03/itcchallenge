@@ -10,7 +10,6 @@
     --background-color: #F3F8FD;
     background-color: var(--background-color);
    overflow-x: hidden;
-   
 }
 body{
     height: 100vh;

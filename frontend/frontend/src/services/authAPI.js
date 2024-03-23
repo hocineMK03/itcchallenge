@@ -27,7 +27,7 @@ class AuthAPI{
         }
        }
        catch(error){
-           console.error('Error during login:', error);
+           console.error('Error during displaytrainings:', error);
            throw error;
        }
 

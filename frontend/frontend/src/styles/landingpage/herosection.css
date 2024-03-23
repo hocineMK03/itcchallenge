@@ -55,7 +55,7 @@
 }
 
 .hero-content p {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   margin-bottom: 30px;
   background-color: transparent;
   color: var(--background-color);
@@ -69,7 +69,7 @@
   border-radius: 10px;
   text-decoration: none;
   min-width: 20%;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   transition: background-color 0.3s ease;
   overflow-y: hidden;
   min-height: 45px;

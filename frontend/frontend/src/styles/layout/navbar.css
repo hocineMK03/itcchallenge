@@ -32,7 +32,7 @@ nav ul{
 }
 nav ul li{
     list-style: none;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
     cursor: pointer;
     
@@ -52,7 +52,7 @@ nav ul li a:hover{
     padding: 8px 16px; /* Reduce padding to prevent stretching */
     border: none;
     border-radius: 5px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
     background: var(--accent-color);

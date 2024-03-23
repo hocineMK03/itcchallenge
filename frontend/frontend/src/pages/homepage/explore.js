@@ -1,43 +1,96 @@
-import React, { useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../styles/homepage/explore.css';
-const Explore = () => {
-    const courseData = {
-        title: "Introduction to Data Science",
-        description: "Learn the fundamentals of data science and analytics.",
-        duration: "4 weeks",
-        fees: "$300",
-        format: "Online",
-        category: "Data Science",
-        dateCreated: "2024-03-25T00:00:00Z"
-    };
-   
+import productsAPI, { handleDisplayProducts } from '../../services/productsAPI';
+import ExploreDeatils from './exploredetails';
+import ExploreDetails from './exploredetails';
+const Explore = ({products,setProducts}) => {
+    
+  const [particulairproduct,setParticulairproduct]=useState(null)
+
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const data = await productsAPI.handleDisplayProducts()
+            setProducts(data);
+          } catch (error) {
+            console.error(error);
+            // Handle error state
+          }
+        };
+    
+        fetchData();
+      }, []);
+
+      const handleFilterByCategory = async (category) => {
+
+        const data = await productsAPI.handleDisplayProductsByCategory(category);
+        if(data){
+          console.log(data)
+          setProducts(data)
+        }
+else{
+  console.log("no")
+
+}
+
+      }
+      const handleParticulairProducts=(product)=>{
+        setParticulairproduct(product)
+        console.log(particulairproduct,product)
+          }
+
+          const handleClose = () => {
+            console.log(particulairproduct)
+            setParticulairproduct(null)
+          };
     return (
         <div className='page'>
-            <div className='sidebar'>
-            </div>
+            <nav className="sidebar-nav">
+            <ul>
+                    <li id='bigli'>List Of Categories
+                        <ul className="sub-menu">
+                            <li><a href="#" onClick={()=>handleFilterByCategory("Web Dev")}>Web Dev</a></li>
+                            <li><a href="#"onClick={()=>handleFilterByCategory("Web Dev")}>Graphic Design</a></li>
+                            <li><a href="#"onClick={()=>handleFilterByCategory("Data Science")}>Data Science</a></li>
+                            <li><a href="#"onClick={()=>handleFilterByCategory("Web Dev")}>Machine Learning</a></li>
+                            <li><a href="#"onClick={()=>handleFilterByCategory("Web Dev")}>Artificial Intelligence</a></li>
+                        </ul>
+                    </li>
+                    <li id='bigli'><ul><li><a href='#'>Questions</a></li></ul></li>
+                    <li id='bigli'><ul><li><a href='#'>Events</a></li></ul></li>
+                </ul>
+            </nav>
             <div className='cards'>
-                <Card style={{ width: '18rem' }} className="course-card">
-                    <Card.Body>
-                        <Card.Title>Title :{courseData.title}</Card.Title>
-                        <Card.Text>Description :{courseData.description}</Card.Text>
-                    </Card.Body>
-                    <ListGroup className="list-group-flush">
-                        <ListGroup.Item>Duration :{courseData.duration}</ListGroup.Item>
-                        <ListGroup.Item>Category :{courseData.category}</ListGroup.Item>
-                        <ListGroup.Item>Fees :{courseData.fees}</ListGroup.Item>
-                        <ListGroup.Item>Date Created :{courseData.dateCreated}</ListGroup.Item>
-
-                    </ListGroup>
-                    <Card.Body className="card-btn">
-        <Button  >Enlist</Button>
-        <Button  >Details</Button>
-        </Card.Body>
-                </Card>
-                
+                <div className="grid-container">
+                   
+                    {products.map((product) => (
+                        
+                        <Card style={{ width: '18rem' }} className="course-card">
+                        <Card.Body>
+                            <Card.Title>Title :{product.title}</Card.Title>
+                            <Card.Text>Description :{product.description}</Card.Text>
+                        </Card.Body>
+                        <ListGroup className="list-group-flush">
+                            <ListGroup.Item>Duration :{product.duration}</ListGroup.Item>
+                            <ListGroup.Item>Category :{product.category}</ListGroup.Item>
+                            <ListGroup.Item>Fees :{product.fees}</ListGroup.Item>
+                            <ListGroup.Item>Date Created :{product.dateCreated}</ListGroup.Item>
+                        </ListGroup>
+                        <Card.Body className="card-btn">
+                            <Button>Enlist</Button>
+                            <Button onClick={() => handleParticulairProducts(product)}>Details</Button>
+                        </Card.Body>
+                    </Card>
+                   
+                    ))}
+                     {particulairproduct && (
+                        <ExploreDetails particulairproduct={particulairproduct} handleClose={handleClose} />
+                      )}
+                </div>
             </div>
         </div>
     );
