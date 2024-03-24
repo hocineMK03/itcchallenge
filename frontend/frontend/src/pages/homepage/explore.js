@@ -53,10 +53,10 @@ else{
             <ul>
                     <li id='bigli'>List Of Categories
                         <ul className="sub-menu">
-                            <li><a href="#" onClick={()=>handleFilterByCategory("Web Dev")}>Web Dev</a></li>
+                            <li><a href="#" onClick={()=>handleFilterByCategory("Web Development")}>Web Development</a></li>
                             <li><a href="#"onClick={()=>handleFilterByCategory("Web Dev")}>Graphic Design</a></li>
                             <li><a href="#"onClick={()=>handleFilterByCategory("Data Science")}>Data Science</a></li>
-                            <li><a href="#"onClick={()=>handleFilterByCategory("Web Dev")}>Machine Learning</a></li>
+                            <li><a href="#"onClick={()=>handleFilterByCategory("Programming")}>Programming</a></li>
                             <li><a href="#"onClick={()=>handleFilterByCategory("Web Dev")}>Artificial Intelligence</a></li>
                         </ul>
                     </li>

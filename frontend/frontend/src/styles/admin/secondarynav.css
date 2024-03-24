@@ -1,0 +1,42 @@
+.aactive{
+    background-color: var(--accent-color);
+color:white;
+border-radius: 5px;
+overflow-y: hidden;
+}
+.secondary-nav {
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+
+  }
+  
+.secondary-nav ul{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: hidden;
+
+}
+
+.secondary-nav ul li{
+    list-style: none;
+    overflow-y: hidden;
+    padding: 0.7rem;
+
+}
+.secondary-nav ul li a{
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding:  1rem;
+    transition: all 0.3s;
+
+}
+.secondary-nav ul li a:not(.aactive):hover{
+
+    border-bottom: 2px solid var(--accent-color);
+}
+

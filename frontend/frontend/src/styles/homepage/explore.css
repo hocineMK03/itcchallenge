@@ -1,38 +1,56 @@
 
+.page{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
 .sidebar-nav {
-  position: absolute;
+  position: fixed; /* Fixed position to keep it visible */
+  top: 0;
   left: 0;
-  top: 25%; /* Adjust the top position as needed */
-  height: 100%; /* Make the sidebar take the full height of its container */
+  width: 200px; /* Adjust width as needed */
+  height: 100%; /* Make the sidebar take the full height */
+  background-color: #f0f0f0; /* Sidebar background color */
+  padding: 20px;
   overflow-y: auto; /* Add vertical scrollbar if content exceeds height */
-  width: 200px; /* Set a fixed width for the sidebar */
-  padding: 20px; /* Add padding for better appearance */
-  background-color: #f0f0f0; /* Background color of the sidebar */
-  
 }
 
-.sidebar-nav ul{
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  background-color: #f0f0f0;
-padding: 20px;
-}
-ul li{
+.sidebar-nav ul {
   list-style: none;
-  background-color: transparent;
-  padding: 20px 0;
-  font-size: 0.5rem;
+  padding: 0;
+  margin: 0;
 }
-ul li a{
-  list-style: none;
-  background-color: transparent;
-  padding: 20px 10px;
-  font-size: 0.9rem;
+
+.sidebar-nav ul li {
+  padding: 10px 0;
 }
+
+.sidebar-nav ul li#bigli {
+  font-weight: bold; /* Style the main menu items */
+}
+
+.sidebar-nav ul li ul.sub-menu {
+  margin-left: 10px; /* Indent sub-menu items */
+}
+
+.sidebar-nav ul li ul.sub-menu li {
+  padding: 5px 0;
+}
+
+.sidebar-nav ul li a {
+  text-decoration: none;
+  color: var(--text-color); /* Link color */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.sidebar-nav ul li a:hover {
+  color: var(--primary-color); /* Hover color */
+}
+
 
 .cards {
-background-color: var(--background-color);
   display: flex;
   justify-content: center; 
   align-items: center; 

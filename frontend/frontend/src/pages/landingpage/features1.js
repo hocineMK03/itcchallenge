@@ -1,9 +1,9 @@
-import React from 'react';
-import '../../styles/landingpage/features.css';
+import React from 'react'
 import { FaSignal } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { FaHandshake } from "react-icons/fa";
-const Features = () => {
+import '../../styles/landingpage/features.css'
+const Features1 = () => {
   return (
     <section className='feature'>
 
@@ -32,7 +32,7 @@ const Features = () => {
         </div>
     </div>
     </section>
-  );
-};
+  )
+}
 
-export default Features;
+export default Features1

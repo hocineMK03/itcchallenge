@@ -6,15 +6,16 @@ import RegisterNow from './landingpage/registernow'
 import Footer from '../layout/footer'
 import SmallAboutUS from './landingpage/smallaboutus'
 
+import DiscoverPlatform from './landingpage/discoverplatform'
 const LandingPage = () => {
   return (
     <div>
+    
+
       <NavBar />
       <HeroSection />
-      <SmallAboutUS/>
       <Features />
-      <RegisterNow />
-      <Footer />
+      <DiscoverPlatform />
     </div>
   )
 }

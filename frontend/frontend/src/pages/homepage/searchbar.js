@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import '../../styles/homepage/searchbar.css';
-
+import productsapi from '../../services/productsAPI';
 const SearchBar = ({setProducts}) => {
   const [data,setData]=useState('')
   const handleInput = (e) => {
@@ -12,7 +12,14 @@ const SearchBar = ({setProducts}) => {
 
 
   const handleClick=async(e)=>{
-
+    const result=await productsapi.handleProductByName(data)
+    if(result){
+      console.log(result)
+      setProducts(result)
+    }
+    else{
+      console.log('no')
+    }
   }
   return (
     <div className="searchbar">

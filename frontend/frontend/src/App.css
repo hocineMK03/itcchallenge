@@ -4,11 +4,12 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-        --primary-color: #FFC300; 
-    --accent-color: #CE47FF;
-    --text-color: #050315; 
-    --background-color: #F3F8FD;
-    background-color: var(--background-color);
+        --primary-color: #6BB77B; 
+    --accent-color: #5AA6A1;
+    --text-color: #404757; 
+    --background-color: #F8FFE0;
+    --accent-color-hover: #549995;
+    --primary-color-hover: #60a56f;
    overflow-x: hidden;
 }
 body{

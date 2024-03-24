@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/auth/auth.css';
+import { Link,useNavigate } from 'react-router-dom';
+
 const authapi=require('../services/authAPI')
 const Auth = () => {
+    const navigate = useNavigate();
+
     const [isSignUp, setIsSignUp] = useState(false);
     const [user,setUser]=useState({
         username:'',
         password:'',
         email:''
     })
+    const [error, setError] = useState('');
 
     useEffect(() => {
         const script = document.createElement('script');
@@ -71,6 +76,8 @@ const Auth = () => {
             ...prevdata,
             [name]:value,
         }))
+        setError('')
+
     }
     
     const handleLogin = async() => {
@@ -84,9 +91,14 @@ const Auth = () => {
             const result = await authapi.register(user);
             if(result){
                 console.log('registration success')
+                navigate('/home');
+                console.log("navigating")
+
             }
             else{
                 console.log('registration failed')
+                setError('inputs invalid')
+
             }
         } else {
             console.log("Logging in with email:", user.email, "and password:", user.password);
@@ -98,8 +110,11 @@ const Auth = () => {
             const result =await  authapi.login({ email, password });
             if (result) {
                 console.log('login success')
+                console.log("navigating")
+                navigate('/home');
             } else {
                 console.log('login failed')
+                setError('inputs invalid')
             }
         }
     };
@@ -135,6 +150,9 @@ const Auth = () => {
                             Sing in
                         </button>
                     </div>
+                    <div className='errors'>
+            <p id='errorshow'>{error}</p>
+         </div>
                 </form>
             </div>
         </div>

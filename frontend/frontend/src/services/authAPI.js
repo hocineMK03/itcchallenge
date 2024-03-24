@@ -1,3 +1,4 @@
+const Cookies=require('js-cookie')
 
 
 class AuthAPI{
@@ -59,5 +60,32 @@ class AuthAPI{
     }
 
 
+    async isperms(){
+       const token=Cookies.get('access_token')
+        try{
+            const response = await fetch(`${this.url}/perms`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `${token}`
+            },
+            credentials: 'include',
+        });
+
+if (response.status===200) {
+            
+            return true;
+          } else {
+
+            return false
+          }
+        }
+        
+        catch(error){
+            console.error('Error during perms:', error);
+            throw error;
+        }
+
+    }
 }
 module.exports = new AuthAPI;
