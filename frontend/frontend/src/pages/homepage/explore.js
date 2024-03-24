@@ -57,6 +57,9 @@ else{
               navigate('/payment');
 
             }
+            else{
+              navigate('/auth')
+            }
           }
     return (
         <div className='page'>

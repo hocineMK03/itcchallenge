@@ -101,7 +101,7 @@
 
 .card-btn button:hover {
   transform: scale(1.1);
-  background-color: #b641e0;
+  background-color:  var(--primary-color-hover);
 }
 @media screen and (max-width: 1200px) {
   .grid-container {
