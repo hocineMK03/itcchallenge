@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom'
 import logoimage from '../assets/logo.png'
 import authutils from '../utils/authUtils'
 import authapi from '../services/authAPI'
+import Cookies from 'js-cookie'
 const NavBar = () => {
   const handleredirect = () => {
     window.location.href = '/auth'; // Navigate to the '/auth' URL when the button is clicked
@@ -39,6 +40,12 @@ if(isAuthenticated){
   }
 }
 }
+const handlelogout = () => {
+  Cookies.remove('access_token')
+Cookies.remove('refresh_token')
+
+  }
+
   return (
     <nav className='navbar'>
       <img src={logoimage}/>
@@ -54,7 +61,7 @@ setMenuOpen(!menuOpen)
 <ul className={menuOpen ? "open" : ""}>
 <li><NavLink to="/home">Home</NavLink></li>
 <li><NavLink to="/aboutus">About Us</NavLink></li>
-<li><NavLink to="/services">Services</NavLink></li>
+<li><NavLink to="/contactus">Contact Us</NavLink></li>
 {isAdmin && <li><NavLink to="/admin">Admin</NavLink></li>
 }
 </ul>
@@ -63,7 +70,7 @@ setMenuOpen(!menuOpen)
   
 {isAuthenticated ? (
   <li>
-    <NavLink to="/auth">Logout</NavLink>
+    <NavLink to="/" onClick={handlelogout}>Logout</NavLink>
   </li>
 ) : (
   <li>

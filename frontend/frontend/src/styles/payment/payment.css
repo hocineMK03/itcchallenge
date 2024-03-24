@@ -1,0 +1,187 @@
+
+.containerr {
+    width: 100%;
+    height: 100vh;
+    background-color: #5aa7a1;
+    position: relative;
+    color: var(--text-color);
+    
+  }
+  
+  .box {
+    width: 80%;
+    height: 70%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: #2f6461 20px 23px 12px 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    margin: 1.7rem 1.5rem;
+  }
+  
+  .boxLeft {
+    width: 60%;
+    height: 100%;
+    /* background-color: rgb(172, 14, 172); */
+  }
+  
+  .boxLeft h2 {
+    color: black;
+    text-align: center;
+    font-size: 1.7rem;
+    margin: 0.7rem 0.5rem;
+    padding: 0.5rem;
+  }
+  
+  .boxLeft input.cardNumber {
+    width: 60%;
+    height: 10%;
+    border-radius: 5px;
+    border: solid 2px lightgray;
+    outline: solid 2px transparent;
+  
+    padding: 5px 10px 5px 15px;
+    text-align: start;
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-bottom: 5px;
+  }
+  .boxLeft input.cardNumber1 {
+    width: 60%;
+    height: 10%;
+    border-radius: 5px;
+    border: solid 2px lightgray;
+    outline: solid 2px transparent;
+  
+    padding: 5px 10px 5px 40px;
+    text-align: start;
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .boxLeft span {
+    display: inline-block;
+    vertical-align: middle;
+    position: absolute;
+    top: 18%;
+    left: 14%;
+    z-index: 1;
+  }
+  
+  .boxLeft select.citySelect {
+    width: 60%;
+    height: 10%;
+    border-radius: 5px;
+    border: solid 2px lightgray;
+    outline: solid 2px transparent;
+  
+    padding: 5px 10px 5px 15px;
+    text-align: start;
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-bottom: 5px;
+  }
+  
+  .boxLeft input.cardNumber3 {
+    width: 30%;
+    height: 10%;
+    border-radius: 5px;
+    border: solid 2px lightgray;
+    outline: solid 2px transparent;
+    padding: 5px 10px 5px 15px;
+    text-align: start;
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-bottom: 5px;
+  }
+  
+  .lastnput {
+    width: 100%;
+    height: auto;
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .lastnput .citySelect2 {
+    width: 15%;
+    height: 10%;
+    border-radius: 5px;
+    border: solid 2px lightgray;
+    outline: solid 2px transparent;
+  
+    padding: 5px 10px 5px 15px;
+    text-align: start;
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+  }
+  .lastnput .citySelect3 {
+    width: 15%;
+    height: 10%;
+    border-radius: 5px;
+    border: solid 2px lightgray;
+    outline: solid 2px transparent;
+  
+    padding: 5px 10px 5px 15px;
+    text-align: start;
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .lastnput .cardNumber33 {
+    width: 25%;
+    height: 10%;
+    border-radius: 5px;
+    border: solid 2px lightgray;
+    outline: solid 2px transparent;
+    padding: 5px 10px 5px 15px;
+    text-align: start;
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-bottom: 10px;
+  }
+  
+  .boxRight {
+    width: 40%;
+    height: 100%;
+    /* background-color: blue; */
+    padding: 10px;
+    border-left: 2px solid rgb(126, 126, 126);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .boxright h2{
+    text-align: center;
+  }
+  .boxright p{
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .boxRight img{
+    width: 50%;
+    height: 50%;
+    cursor: pointer;
+transition: transform 0.3s;
+margin: 0 0.7rem;
+  }
+.boxRight button{
+    width: 25%;
+    margin: 0.5 1rem;
+    padding: 0.4rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+}

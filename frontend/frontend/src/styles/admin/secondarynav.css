@@ -40,3 +40,15 @@ overflow-y: hidden;
     border-bottom: 2px solid var(--accent-color);
 }
 
+@media (max-width:750px){
+    .secondary-nav ul{
+        flex-direction: column;
+        margin: 1.7rem 0;
+    }
+    .secondary-nav ul li{
+        padding: 0.5rem;
+    }
+    .secondary-nav ul li a{
+        font-size: 1rem;
+    }
+}

@@ -2,13 +2,13 @@ import React from 'react'
 import { Navbar } from 'react-bootstrap'
 import NavBar from '../layout/navbar'
 
-const Services = () => {
+const ContactUs = () => {
   return (
     <div>
         <NavBar/>
-      <p>not so lorem</p>
+      <p>team 5</p>
     </div>
   )
 }
 
-export default Services
+export default ContactUs

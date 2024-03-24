@@ -1,16 +1,10 @@
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
 
-  }
 .container {
     width: 100%;
     height: 100vh;
     position: relative;
-    background-color: var(--background-color);
+    
   }
   
   .form-box {
@@ -52,6 +46,10 @@
 form{
     background-color: transparent;
    
+}
+#title{
+  color:white;
+  font-weight: 600;
 }
   .input-group{
     background-color: transparent;

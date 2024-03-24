@@ -16,6 +16,9 @@ const LandingPage = () => {
       <HeroSection />
       <Features />
       <DiscoverPlatform />
+
+      <RegisterNow />
+      <Footer />
     </div>
   )
 }

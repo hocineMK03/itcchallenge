@@ -5,10 +5,12 @@ import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../styles/homepage/explore.css';
 import productsAPI, { handleDisplayProducts } from '../../services/productsAPI';
-import ExploreDeatils from './exploredetails';
 import ExploreDetails from './exploredetails';
+import authutils from '../../utils/authUtils';
+import { useNavigate } from 'react-router-dom';
 const Explore = ({products,setProducts}) => {
-    
+  const navigate = useNavigate();
+
   const [particulairproduct,setParticulairproduct]=useState(null)
 
     useEffect(() => {
@@ -47,6 +49,15 @@ else{
             console.log(particulairproduct)
             setParticulairproduct(null)
           };
+
+          const handleEnroll=()=>{
+            console.log("enroll")
+            if(authutils.isAuthenticated()){
+              //here
+              navigate('/payment');
+
+            }
+          }
     return (
         <div className='page'>
             <nav className="sidebar-nav">
@@ -81,7 +92,7 @@ else{
                             <ListGroup.Item>Date Created :{product.dateCreated}</ListGroup.Item>
                         </ListGroup>
                         <Card.Body className="card-btn">
-                            <Button>Enlist</Button>
+                            <Button onClick={handleEnroll}>Enroll</Button>
                             <Button onClick={() => handleParticulairProducts(product)}>Details</Button>
                         </Card.Body>
                     </Card>

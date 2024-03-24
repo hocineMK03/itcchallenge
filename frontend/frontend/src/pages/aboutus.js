@@ -5,7 +5,7 @@ const AboutUs = () => {
   return (
     <div>
         <NavBar />
-      <p>lorem ipsum</p>
+      <p>team 5</p>
     </div>
   )
 }

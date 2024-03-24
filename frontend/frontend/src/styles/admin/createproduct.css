@@ -38,3 +38,46 @@
     background-color: var(--accent-color);
   }
   
+
+  @media (max-width:750px){
+
+    .create-product-container {
+        max-width: 300px;
+        margin: 0.7rem auto;
+        color: var(--text-color);
+        padding: 0.7rem 0.r5em;
+    
+      }
+      
+      .form-group {
+        margin-bottom: 1rem;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      
+      .form-group input,
+      textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+      
+      .create-product-container button {
+        background-color: var(--accent-color);
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 0.2rem 0.7rem;
+      }
+      
+      .create-product-container button:hover {
+        background-color: var(--accent-color);
+      }
+  }
