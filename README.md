@@ -32,3 +32,6 @@ Once the dependencies are installed, you can start the development server:
 npm start
 ```
 ### don't use localhost:3000 as a url , use the ip adress of it  , for exemple 127.0.0.1:3000
+### use admin account for admin privelege
+### email : admin@gmail.com
+### password: admin
