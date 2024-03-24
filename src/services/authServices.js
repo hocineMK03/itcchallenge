@@ -63,5 +63,19 @@ class Authservices{
             throw new Error(error)
         }
     }
+    async checkPermesssion(email){
+        console.log("email",email)
+        try{
+            const result=await User.findOne({email:email}).exec();
+            if(result.isadmin){
+                return result.username
+            }
+            throw Object.assign(new Error('User is not admin'),{statusCode:401})
+        }
+        catch(error){
+            throw new Error(error)
+        }
+
+    }
 }
 module.exports = new Authservices;

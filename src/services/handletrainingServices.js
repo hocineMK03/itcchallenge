@@ -130,8 +130,21 @@ catch(err){
 }
   }
 
-  async handleDisplayTrainingByName() {
-
+  async handleDisplayTrainingByName(Name) {
+    try{
+        const regexPattern = `^${Name}`;
+        console.log('Regex Pattern:', regexPattern); // Log the constructed regex pattern
+    
+        const trainings = await trainingProgram.find({ title: { $regex: new RegExp(`^${Name}`, "i") } }).exec(); 
+        if(trainings){
+            return trainings
+        }
+        throw Object.assign(new Error('No training programs found'), { status: 404 })
+    
+    }
+    catch(err){
+        throw new Error(err)
+    }
 
   }
   

@@ -12,7 +12,7 @@ class AuthControllers{
 
                 const accessToken=jwtauth.createAccessToken(email);
             const refreshToken=jwtauth.createRefreshToken(email);
-            res.cookie('access_token', accessToken, { httpOnly: true ,maxAge:4*60*1000 });
+            res.cookie('access_token', accessToken, { maxAge:30*60*1000 });
   res.cookie('refresh_token', refreshToken, { httpOnly: true, maxAge:24*60*60*1000});
             console.log(accessToken,refreshToken)
                 return res.status(200).json('login successful')
@@ -69,5 +69,23 @@ class AuthControllers{
 
     }
 
+        async handleGetPermissions(req,res,next){
+            console.log("here")
+            console.log(req.user.user)
+            try{
+                const result=await services.checkPermesssion(req.user.user)
+                console.log(result)
+                if(result){
+                    return res.status(200).json(result)
+                }
+                const err=new Error('No permissions found')
+                err.statusCode=404
+                err.status='not found'
+                next(err)
+            }
+            catch(error){
+                next(error)
+            }
+        }
 }
 module.exports = new AuthControllers;
