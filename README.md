@@ -1,6 +1,4 @@
-# React Project Setup
-
-This project is a React application built to [briefly describe its purpose].
+![landing page](frontend/frontend/src/assets/capture.png)
 
 ## Installation
 
